@@ -278,6 +278,12 @@ footer {
   }
 }
 
+#obras {
+    text-align: center;
+    font-size: 1.25rem;
+    margin-top: 1.25rem;
+}
+
 #correo {
     text-align: center;
     font-size: 1.25rem;
