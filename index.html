@@ -4,56 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio de Artista Digital</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav {
-            margin: 20px 0;
-        }
-        nav a {
-            margin: 0 15px;
-            color: #fff;
-            text-decoration: none;
-        }
-        section {
-            padding: 20px;
-            margin: 10px;
-            background: #fff;
-            border-radius: 5px;
-        }
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background: #333;
-            color: #fff;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -68,10 +18,48 @@
     </header>
     <section id="portfolio">
         <h2>Portafolio</h2>
-        <p>Aquí puedes incluir imágenes de tus obras. Ejemplo:</p>
-        <img src="./assets/images/Mamimi_Tanaka.png" alt="Obra 1" style="width:100%;max-width:600px;">
-        <br id="Espacio">
-        <img src="./assets/images/Tohru_5000.png" alt="Obra 2" style="width:100%;max-width:600px;">
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="./assets/images/Mamimi_Tanaka.png" alt="Obra 1">
+            </div>
+            <div class="portfolio-item">
+                <img src="./assets/images/Tohru_5000.png" alt="Obra 2">
+            </div>
+            <!-- Puedes agregar más imágenes aquí -->
+            <div class="portfolio-item">
+                <img src="./assets/images/GIrl1.jpg" alt="Obra 3">
+            </div>
+            <div class="portfolio-item">
+                <img src="./assets/images/practica_Syunsaeki_6_3_25.png" alt="Obra 4">
+            </div>
+            <div class="portfolio-item">
+                <img src="./assets/images/Cabello_en_movimiento.png" alt="Obra 5">
+            </div>
+            <div class="portfolio-item">
+                <img src="./assets/images/Chacal_lineart.png" alt="Obra 6">
+            </div>
+            <div class="portfolio-item">
+                <img src="./assets/images/Dragona_lineart.png" alt="Obra 7">
+            </div>
+            <div class="portfolio-item">
+                <img src="./assets/images/Foxy_lineart.png" alt="Obra 8">
+            </div>
+            <div class="portfolio-item">
+                <img src="./assets/images/" alt="Obra 9">
+            </div>
+            <div class="portfolio-item">
+                <img src="./assets/images/" alt="Obra 10">
+            </div>
+            <div class="portfolio-item">
+                <img src="./assets/images/" alt="Obra 11">
+            </div>
+            <div class="portfolio-item">
+                <img src="./assets/images/" alt="Obra 12">
+            </div>
+            <div class="portfolio-item">
+                <img src="./assets/images/" alt="Obra 13">
+            </div>
+        </div>
     </section>
     <section id="bio">
         <h2>Biografía</h2>
@@ -84,16 +72,21 @@
     <section id="prices">
         <h2>Precios</h2>
         <p>A continuación se muestra una tabla con los precios de las obras:</p>
-            <img src="./assets/images/Tabla_comisiones_basica.png" alt="Pagina" id="Prices">
-            </tr>
-        </table>
+        <img src="./assets/images/Tabla_comisiones_basica.png" alt="Tabla de precios" id="Prices">
     </section>
     <section id="contact">
         <h2>Contacto</h2>
         <p>Puedes contactarme a través de mi correo: <a href="mailto:correo@ejemplo.com">correo@ejemplo.com</a></p>
+        <p>Redes:</p>
+        <div class="social-icons">
+            <!-- Reemplaza las URLs con tus enlaces reales -->
+            <a href="https://www.tiktok.com/@sencayc"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TikTok"></a>
+            <a href="https://www.instagram.com/sencayc_art/"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+            <a href="https://x.com/Sencayc_art/photo"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
+        </div>
     </section>
     <footer>
-        <p>&copy; 2025 [Nombre del Artista]. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Sencay. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
