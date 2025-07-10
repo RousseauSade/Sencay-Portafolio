@@ -1,107 +1,279 @@
+/* Reset y estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-/* RESET GENERAL */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* Importar fuentes de Google */
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Lobster&display=swap');
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fff;
-    color: #1e1e1e;
-    line-height: 1.6;
-}
-header {
-    background: linear-gradient(to right, #7f5af0, #2cb67d);
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-    position: relative;
-    border-bottom: 4px solid #222;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-.header-logo {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    width: 80px;
-    height: 100px;
-}
-nav { margin-top: 15px; }
-nav a {
-    color: white; margin: 0 20px; text-decoration: none;
-    font-weight: 600; font-size: 1.1rem; transition: color 0.3s;
-}
-nav a:hover { color: #ffd803; }
-section { padding: 60px 20px; max-width: 1200px; margin: auto; }
-h2 {
-    text-align: center; margin-bottom: 40px; font-size: 2.4rem;
-    color: #5f27cd; position: relative;
-}
-h2::after {
-    content: ''; width: 80px; height: 4px; background: #5f27cd;
-    display: block; margin: 10px auto 0; border-radius: 4px;
-}
-.filters { text-align: center; margin-bottom: 30px; }
-.filter-btn {
-    background-color: #e0e0e0; color: #333; border: none;
-    padding: 12px 24px; margin: 8px; cursor: pointer;
-    border-radius: 50px; font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-}
-.filter-btn:hover { background-color: #7f5af0; color: white; transform: scale(1.05); }
-.filter-btn.active { background-color: #5f27cd; color: white; }
-.portfolio-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px; padding: 0 20px;
-}
-.portfolio-item {
-    position: relative; overflow: hidden; border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); background-color: #fff;
-}
-.portfolio-item img {
-    width: 100%; border-radius: 16px;
-    transition: transform 0.3s ease-in-out;
-}
-.portfolio-item:hover img { transform: scale(1.05); }
-.overlay {
-    position: absolute; bottom: 0; background: rgba(95, 39, 205, 0.9);
-    color: #fff; width: 100%; padding: 15px; text-align: center;
-    opacity: 0; transition: opacity 0.3s ease-in-out;
-    font-weight: bold;
-}
-.portfolio-item:hover .overlay { opacity: 1; }
-#Prices {
-    width: 100%; max-width: 900px; display: block;
-    margin: 0 auto; border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-#bio p { font-size: 1.1rem; text-align: justify; max-width: 900px; margin: auto; }
-.social-icons {
-    display: flex; justify-content: center; gap: 20px; margin-top: 15px;
-}
-.social-icons img {
-    width: 40px; height: 40px; transition: transform 0.3s ease;
-    filter: grayscale(100%);
-}
-.social-icons img:hover {
-    transform: scale(1.2); filter: grayscale(0%) brightness(1.2);
-}
-form {
-    margin-top: 30px; text-align: center;
-}
-form input, form textarea {
-    width: 70%; padding: 10px; margin: 10px 0;
-    border-radius: 10px; border: 1px solid #ccc;
-}
-form button {
-    padding: 12px 30px; border: none; background-color: #5f27cd;
-    color: white; border-radius: 30px; font-weight: bold; cursor: pointer;
-}
-footer {
-    background-color: #222; color: #eee; text-align: center;
-    padding: 20px; margin-top: 40px; font-size: 0.9rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #1a202c;
+  line-height: 1.6;
 }
 
+/* Header */
+header {
+  background: linear-gradient(135deg, #7c3aed, #2cb67d);
+  color: white;
+  padding: 4rem 1.25rem;
+  text-align: center;
+  position: relative;
+  border-bottom: 4px solid #000000;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  clip-path: ellipse(100% 85% at 50% 0%);
+}
+
+.header-logo {
+  position: absolute;
+  top: 0.9375rem;
+  right: 1.875rem;
+  width: 5rem;
+  height: 6.25rem;
+}
+
+/* Navegación */
+nav {
+  margin-top: 1.25rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.125rem;
+  padding: 0.625rem 1.25rem;
+  transition: all 0.3s;
+  border-radius: 1.5625rem;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav a:hover {
+  background-color: #f6e05e;
+  color: #1a202c;
+}
+
+/* Secciones generales */
+section {
+  padding: 5rem 1.25rem;
+  max-width: 81.25rem;
+  margin: 0 auto;
+}
+
+#titulo {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  color: white;
+  font-weight: bold;
+  font-family: "Fredericka the Great", cursive;
+}
+
+/* Títulos h2 - TAMAÑO MODIFICADO (de 10.25rem a 2.8rem) */
+h2 {
+  text-align: center;
+  color: #5b21b6;
+  position: relative;
+  font-family: 'Lobster', cursive;
+}
+
+h2::after {
+  content: '';
+  width: 6rem;
+  height: 0.25rem;
+  background: #5b21b6;
+  display: block;
+  margin: 0.9375rem auto 0;
+  border-radius: 0.25rem;
+}
+
+.titulos {
+  margin-bottom: 3rem;
+  font-size: 1.8rem; /* Cambiado de 10.25rem a un tamaño razonable */
+}
+
+/* Portafolio */
+.filters {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.filter-btn {
+  background-color: #f7fafc;
+  color: #2d3748;
+  border: none;
+  padding: 0.875rem 1.75rem;
+  margin: 0.625rem;
+  cursor: pointer;
+  border-radius: 3.125rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.filter-btn:hover {
+  background-color: #7c3aed;
+  color: white;
+  transform: scale(1.05);
+}
+
+.filter-btn.active {
+  background-color: #5b21b6;
+  color: white;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+  gap: 1.875rem;
+  padding: 0 1.25rem;
+}
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  transition: transform 0.3s;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-0.3125rem);
+}
+
+.portfolio-item img {
+  width: 100%;
+  border-radius: 1.25rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.06);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(91, 33, 182, 0.92);
+  color: #fff;
+  width: 100%;
+  padding: 1.25rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  font-weight: bold;
+}
+
+.portfolio-item:hover .overlay {
+  opacity: 1;
+}
+
+/* Biografía */
+#bio p {
+  font-size: 1.25rem;
+  text-align: center;
+  max-width: 62.5rem;
+  margin: 0 auto;
+}
+
+/* Precios */
 #Prices {
-    border-collapse: collapse; width: 100%; margin-top: 20px;
-    width: 100%; max-width: 900px; display: block;
-    margin: 0 auto; border-radius: 10px;
+  width: 100%;
+  max-width: 56.25rem;
+  margin: 2.5rem auto;
+  border-radius: 0.75rem;
+  overflow-x: auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-collapse: collapse;
+  display: block;
+}
+
+/* Contacto */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5625rem;
+  margin-top: 1.25rem;
+}
+
+.social-icons img {
+  width: 2.8125rem;
+  height: 2.8125rem;
+  transition: transform 0.3s ease;
+  filter: grayscale(100%) brightness(0.9);
+}
+
+.social-icons img:hover {
+  transform: scale(1.25);
+  filter: grayscale(0%) brightness(1.2);
+}
+
+form {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+form input,
+form textarea {
+  width: 70%;
+  padding: 0.75rem;
+  margin: 0.75rem 0;
+  border-radius: 0.75rem;
+  border: 1px solid #cbd5e0;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+form button {
+  padding: 0.875rem 2.25rem;
+  border: none;
+  background-color: #5b21b6;
+  color: white;
+  border-radius: 2.1875rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #2cb67d;
+}
+
+/* Footer */
+footer {
+  background-color: #111827;
+  color: #e5e7eb;
+  text-align: center;
+  padding: 1.875rem;
+  font-size: 1rem;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 3.75rem;
+}
+
+/* Texto intro */
+#texto-intro {
+  font-size: 1.25rem;
+  text-align: center;
+  max-width: 62.5rem;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

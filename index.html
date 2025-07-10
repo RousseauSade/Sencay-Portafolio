@@ -7,10 +7,15 @@
     <title>Portafolio de Sencay</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Lobster&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="./assets/favicon.ico">
 </head>
 <body>
     <header>
-        <h1>Portafolio de Sencay</h1>
+        <h1 id="titulo">Portafolio de Sencay</h1>
         <img src="./assets/images/Sencay.png" alt="Logo Sencay" class="header-logo">
         <nav>
             <a href="#portfolio">Portafolio</a>
@@ -21,8 +26,8 @@
     </header>
 
     <section id="intro">
-        <h2>¡Hola! Soy Sencay</h2>
-        <p>
+        <h2 class="titulos">¡Hola! Soy Sencay</h2>
+        <p id="texto-intro">
             Artista digital con experiencia en ilustración femenina, concept art y diseño de personajes. 
             Me especializo en obras con fuerte expresividad emocional, técnica precisa y estilo anime semi-realista. 
             Trabajo tanto por encargo como para proyectos editoriales y videojuegos.
@@ -30,7 +35,7 @@
     </section>
 
     <section id="portfolio">
-        <h2>Portafolio</h2>
+        <h2 class="titulos">Portafolio</h2>
         <div class="filters">
             <button class="filter-btn active" data-filter="all">Todos</button>
             <button class="filter-btn" data-filter="ilustraciones">Ilustraciones</button>
@@ -313,7 +318,7 @@
     </section>
 
     <section id="bio">
-        <h2>Biografía</h2>
+        <h2 class="titulos">Biografía</h2>
         <p>
             Inicié mi carrera como artista de medios tradicionales y luego me especialicé en arte digital. 
             He trabajado en estilos como anime, realismo estilizado y chibi, centrándome en ilustración de personajes. 
@@ -322,18 +327,19 @@
     </section>
 
     <section id="prices">
-        <h2>Precios</h2>
+        <h2 class="titulos">Precios</h2>
         <p>A continuación se muestra una tabla con los precios de las obras:</p>
         <img src="./assets/images/Tabla_comisiones_basica.png" alt="Tabla de precios" id="Prices">
     </section>
 
     <section id="contact">
-        <h2>Contacto</h2>
-        <p>Puedes contactarme a través de mi correo: <a href="mailto:correo@ejemplo.com">correo@ejemplo.com</a></p>
+        <h2 class="titulos">Contacto</h2>
+        <p>Puedes contactarme a través de mi correo: <a href="mailto:sencaycomissions@gmail.com">sencaycomissions@gmail.com</a></p>
         <div class="social-icons">
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TikTok" /></a>
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" /></a>
-            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" /></a>
+            <a href="https://www.tiktok.com/@sencayc"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TikTok" /></a>
+            <a href="https://www.instagram.com/sencayc_art/"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" /></a>
+            <a href="https://x.com/sencayc_art"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" /></a>
+            <a href=""><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"></a>
         </div>
         <form>
             <h3>¿Quieres trabajar conmigo?</h3>
