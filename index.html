@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio de Artista Digital</title>
+    <title>Portafolio de Sencay</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <header>
         <h1>Portafolio de Sencay</h1>
+        <img src="./assets/images/Sencay.png" alt="Logo Sencay" class="header-logo">
         <nav>
             <a href="#portfolio">Portafolio</a>
             <a href="#bio">Biografía</a>
@@ -16,68 +18,313 @@
             <a href="#contact">Contacto</a>
         </nav>
     </header>
+
     <section id="portfolio">
         <h2>Portafolio</h2>
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="ilustraciones">Ilustraciones</button>
+            <button class="filter-btn" data-filter="line-art">Line Art</button>
+            <button class="filter-btn" data-filter="emoji">Emojis</button>
+        </div>
         <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <img src="./assets/images/Mamimi_Tanaka.png" alt="Obra 1">
+            <div class="portfolio-item" data-category="ilustraciones">
+                <a href="./assets/images/Syunsaeki 6 3 25.png" data-lightbox="portfolio" data-title="Syunsaeki">
+                    <img src="./assets/images/Syunsaeki 6 3 25.png" alt="Syunsaeki">
+                    <div class="overlay">
+                        <p>Syunsaeki</p>
+                    </div>
+                </a>
             </div>
-            <div class="portfolio-item">
-                <img src="./assets/images/Tohru_5000.png" alt="Obra 2">
+            <div class="portfolio-item" data-category="ilustraciones">
+                <a href="./assets/images/Rubia acuarela.png" data-lightbox="portfolio" data-title="Rubia acuarela">
+                    <img src="./assets/images/Rubia acuarela.png" alt="Rubia">
+                    <div class="overlay">
+                        <p>Rubia</p>
+                    </div>
+                </a>
             </div>
-            <!-- Puedes agregar más imágenes aquí -->
-            <div class="portfolio-item">
-                <img src="./assets/images/GIrl1.jpg" alt="Obra 3">
+            <div class="portfolio-item" data-category="ilustraciones">
+                <a href="./assets/images/Morena acuarela.png" data-lightbox="portfolio" data-title="Morena">
+                    <img src="./assets/images/Morena acuarela.png" alt="Morena">
+                    <div class="overlay">
+                        <p>Morena</p>
+                    </div>
+                </a>
             </div>
-            <div class="portfolio-item">
-                <img src="./assets/images/practica_Syunsaeki_6_3_25.png" alt="Obra 4">
+            <div class="portfolio-item" data-category="ilustraciones">
+                <a href="./assets/images/Mamimi Tanaka.png" data-lightbox="portfolio" data-title="Mamimi">
+                    <img src="./assets/images/Mamimi Tanaka.png" alt="Mamimi">
+                    <div class="overlay">
+                        <p>Mamimi Tanaka</p>
+                    </div>
+                </a>
             </div>
-            <div class="portfolio-item">
-                <img src="./assets/images/Cabello_en_movimiento.png" alt="Obra 5">
+            <div class="portfolio-item" data-category="ilustraciones">
+                <a href="./assets/images/good bye tiktok.png" data-lightbox="portfolio" data-title="Tik Tok">
+                    <img src="./assets/images/good bye tiktok.png" alt="Tik Tok Draw">
+                    <div class="overlay">
+                        <p>Tik Tok</p>
+                    </div>
+                </a>
             </div>
-            <div class="portfolio-item">
-                <img src="./assets/images/Chacal_lineart.png" alt="Obra 6">
+            <div class="portfolio-item" data-category="ilustraciones">
+                <a href="./assets/images/chibi.png" data-lightbox="portfolio" data-title="Chibi">
+                    <img src="./assets/images/chibi.png" alt="Chibi">
+                    <div class="overlay">
+                        <p>Chibi</p>
+                    </div>
+                </a>
             </div>
-            <div class="portfolio-item">
-                <img src="./assets/images/Dragona_lineart.png" alt="Obra 7">
+            <div class="portfolio-item" data-category="ilustraciones">
+                <a href="./assets/images/Cabello en movimiento.png" data-lightbox="portfolio" data-title="Cabello en movimiento">
+                    <img src="./assets/images/Cabello en movimiento.png" alt="Draw of a girl with the hair loss">
+                    <div class="overlay">
+                        <p>Cabello Ondulado</p>
+                    </div>
+                </a>
             </div>
-            <div class="portfolio-item">
-                <img src="./assets/images/Foxy_lineart.png" alt="Obra 8">
+            <div class="portfolio-item" data-category="ilustraciones">
+                <a href="./assets/images/baphy.png" data-lightbox="portfolio" data-title="Bahphy">
+                    <img src="./assets/images/baphy.png" alt="Mimi Demonio">
+                    <div class="overlay">
+                        <p>Mini Demonio</p>
+                    </div>
+                </a>
             </div>
-            <div class="portfolio-item">
-                <img src="./assets/images/" alt="Obra 9">
+            <div class="portfolio-item" data-category="ilustraciones">
+                <a href="./assets/images/Sencay.png" data-lightbox="portfolio" data-title="Sencay">
+                    <img src="./assets/images/Sencay.png" alt="Sencay  Emojis">
+                    <div class="overlay">
+                        <p>Sencay</p>
+                    </div>
+                </a>
             </div>
-            <div class="portfolio-item">
-                <img src="./assets/images/" alt="Obra 10">
+            <div class="portfolio-item" data-category="line-art">
+                <a href="./assets/images/Cabello en movimiento 2.png" data-lightbox="portfolio" data-title="Lineas Cabello">
+                    <img src="./assets/images/Cabello en movimiento 2.png" alt="Line Art Cabello">
+                    <div class="overlay">
+                        <p>Cabellos - Line Art</p>
+                    </div>
+                </a>
             </div>
-            <div class="portfolio-item">
-                <img src="./assets/images/" alt="Obra 11">
+            <div class="portfolio-item" data-category="line-art">
+                <a href="./assets/images/good bye tiktok 2.png" data-lightbox="portfolio" data-title="TIk Tok Line Art">
+                    <img src="./assets/images/good bye tiktok 2.png" alt="TIk Tok Line Art">
+                    <div class="overlay">
+                        <p>TIk Tok - Line Art</p>
+                    </div>
+                </a>
             </div>
-            <div class="portfolio-item">
-                <img src="./assets/images/" alt="Obra 12">
+            <div class="portfolio-item" data-category="line-art">
+                <a href="./assets/images/chibi ln.png" data-lightbox="portfolio" data-title="Chibi Line Art">
+                    <img src="./assets/images/chibi ln.png" alt="Chibi Line Art">
+                    <div class="overlay">
+                        <p>Chibi - Line Art</p>
+                    </div>
+                </a>
             </div>
-            <div class="portfolio-item">
-                <img src="./assets/images/" alt="Obra 13">
+            <div class="portfolio-item" data-category="line-art">
+                <a href="./assets/images/ln beauty.png" data-lightbox="portfolio" data-title="Beauty Line Art">
+                    <img src="./assets/images/ln beauty.png" alt="Beauty Line Art">
+                    <div class="overlay">
+                        <p>Beauty - Line Art</p>
+                    </div>
+                </a>
             </div>
+            <div class="portfolio-item" data-category="line-art">
+                <a href="./assets/images/ln chacal.png" data-lightbox="portfolio" data-title="Chacal Line Art">
+                    <img src="./assets/images/ln chacal.png" alt="Chacal Line Art">
+                    <div class="overlay">
+                        <p>Chacal - Line Art</p>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item" data-category="line-art">
+                <a href="./assets/images/ln cute.png" data-lightbox="portfolio" data-title="Cute Line Art">
+                    <img src="./assets/images/ln cute.png" alt=" Cute Line Art">
+                    <div class="overlay">
+                        <p>Cute - Line Art</p>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item" data-category="line-art">
+                <a href="./assets/images/ln dragon.png" data-lightbox="portfolio" data-title="">
+                    <img src="./assets/images/ln dragon.png" alt="Dragon Line Art">
+                    <div class="overlay">
+                        <p>Dragon - Line Art</p>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item" data-category="line-art">
+                <a href="./assets/images/ln gata.png" data-lightbox="portfolio" data-title="">
+                    <img src="./assets/images/ln gata.png" alt="Gata Line Art">
+                    <div class="overlay">
+                        <p>Gata - Line Art</p>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item" data-category="line-art">
+                <a href="./assets/images/ln guy 1.png" data-lightbox="portfolio" data-title="Guy 1 Line Art">
+                    <img src="./assets/images/ln guy 1.png" alt="Guy 1 Line Art">
+                    <div class="overlay">
+                        <p>Guy 1 - Line Art</p>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item" data-category="line-art">
+                <a href="./assets/images/ln guy 2.png" data-lightbox="portfolio" data-title="Gay 2 Line Art">
+                    <img src="./assets/images/ln guy 2.png" alt="Guy 2 Line Art">
+                    <div class="overlay">
+                        <p>Guy 2 - Line Art</p>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item" data-category="line-art">
+                <a href="./assets/images/ln jin.png" data-lightbox="portfolio" data-title="Jin Line Art">
+                    <img src="./assets/images/ln jin.png" alt="Jin Line Art">
+                    <div class="overlay">
+                        <p>Jin - Line Art</p>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item" data-category="line-art">
+                <a href="./assets/images/ln guy 3.png" data-lightbox="portfolio" data-title="Guy 3 Line Art">
+                    <img src="./assets/images/ln guy 3.png" alt=" Guy 3 Line Art">
+                    <div class="overlay">
+                        <p>Guy 3 - Line Art</p>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item" data-category="line-art">
+                <a href="./assets/images/ln loli.png" data-lightbox="portfolio" data-title="Loli Line Art">
+                    <img src="./assets/images/ln loli.png" alt="Loli Line Art">
+                    <div class="overlay">
+                        <p>Loli - Line Art</p>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item" data-category="line-art">
+                <a href="./assets/images/Mamimi Tanaka 2.png" data-lightbox="portfolio" data-title="Mamimi Line Art">
+                    <img src="./assets/images/Mamimi Tanaka 2.png" alt=" Mamimi Line Art">
+                    <div class="overlay">
+                        <p>Mamimi - Line Art</p>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item" data-category="line-art">
+                <a href="./assets/images/Syunsaeki 2.png" data-lightbox="portfolio" data-title="Syunsaeki Line Art">
+                    <img src="./assets/images/Syunsaeki 2.png" alt="Syunsaeki Line Art">
+                    <div class="overlay">
+                        <p>Syunsaeki - Line Art</p>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item" data-category="line-art">
+                <a href="./assets/images/Yuki ln.png" data-lightbox="portfolio" data-title="Yuki Line Art">
+                    <img src="./assets/images/Yuki ln.png" alt="Yuki Line Art">
+                    <div class="overlay">
+                        <p>Yuki - Line Art</p>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item" data-category="emoji">
+                <a href="./assets/images/chibis.png" data-lightbox="portfolio" data-title="Chibis">
+                    <img src="./assets/images/chibis.png" alt="Chibi Emojis">
+                    <div class="overlay">
+                        <p>Chibis</p>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item" data-category="emoji">
+                <a href="./assets/images/Clown.png" data-lightbox="portfolio" data-title="Clown">
+                    <img src="./assets/images/Clown.png" alt=" Clown Emojis">
+                    <div class="overlay">
+                        <p>Clown</p>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item" data-category="emoji">
+                <a href="./assets/images/Crying.png" data-lightbox="portfolio" data-title="Crying">
+                    <img src="./assets/images/Crying.png" alt=" Crying Emojis">
+                    <div class="overlay">
+                        <p>Crying</p>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item" data-category="emoji">
+                <a href="./assets/images/Fachero.png" data-lightbox="portfolio" data-title="Fachero">
+                    <img src="./assets/images/Fachero.png" alt="Fachero Emojis">
+                    <div class="overlay">
+                        <p>Fachero</p>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item" data-category="emoji">
+                <a href="./assets/images/Fino.png" data-lightbox="portfolio" data-title="Fino">
+                    <img src="./assets/images/Fino.png" alt="FIno Emojis">
+                    <div class="overlay">
+                        <p>Fino</p>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item" data-category="emoji">
+                <a href="./assets/images/Kyun.png" data-lightbox="portfolio" data-title="Kyun">
+                    <img src="./assets/images/Kyun.png" alt="Kyun Emojis">
+                    <div class="overlay">
+                        <p>Kyun</p>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item" data-category="emoji">
+                <a href="./assets/images/Mewging.png" data-lightbox="portfolio" data-title="Mewging">
+                    <img src="./assets/images/Mewging.png" alt="Mewging Emojis">
+                    <div class="overlay">
+                        <p>Mewing</p>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item" data-category="emoji">
+                <a href="./assets/images/WHAT.png" data-lightbox="portfolio" data-title="What">
+                    <img src="./assets/images/WHAT.png" alt="What? Emojis">
+                    <div class="overlay">
+                        <p>What?</p>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item" data-category="emoji">
+                <a href="./assets/images/xD.png" data-lightbox="portfolio" data-title="XD">
+                    <img src="./assets/images/xD.png" alt="XD Emojis">
+                    <div class="overlay">
+                        <p>XD</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Agrega más trabajos aquí -->
         </div>
     </section>
+
     <section id="bio">
         <h2>Biografía</h2>
-        <p>Al principio de mi carrera empeze como artista de medios tradicionales en los cuales fue tomando experiencia para tomar un vuelco total al ambiente digital,
-            con el tiempo no solo fui mejorando en ambas ambitos como en digital y el tradicional, se puede ver toda mi trayectoria en el mi cuenta de Tik Tok, 
-            mi principal foco es el cuerpo feminio pero domino bastante bien el cuerpo masculino, en el ambito de concept art destaco ya que la mayor parte de mi trabajo,
-            es propio manejan bien las prespectiva y el 
-        </p>
+        <p>Inicié mi carrera como artista de medios tradicionales, donde desarrollé una sólida base en técnicas clásicas de dibujo y pintura.
+        Con el tiempo, decidí expandir mis horizontes hacia el mundo digital, adquiriendo dominio en herramientas y software de vanguardia. 
+        Esta transición me ha permitido destacar en ambos ámbitos, combinando la precisión y el detalle del arte tradicional con la versatilidad y dinamismo del arte digital.
+        <br><br>
+        Mi enfoque principal es la representación del cuerpo humano, con un énfasis especial en la figura femenina. Sin embargo, también poseo una amplia experiencia en la representación del cuerpo masculino, 
+        lo que me permite abordar proyectos diversos con versatilidad y profesionalismo. En el ámbito del Concept Art, he desarrollado una habilidad destacada para manejar la perspectiva y crear obras originales que no solo cumplen con los requisitos técnicos, 
+        sino que también transmiten narrativas visuales impactantes.</p>
     </section>
+
     <section id="prices">
         <h2>Precios</h2>
         <p>A continuación se muestra una tabla con los precios de las obras:</p>
         <img src="./assets/images/Tabla_comisiones_basica.png" alt="Tabla de precios" id="Prices">
     </section>
+
     <section id="contact">
         <h2>Contacto</h2>
         <p>Puedes contactarme a través de mi correo: <a href="mailto:correo@ejemplo.com">correo@ejemplo.com</a></p>
-        <p>Redes:</p>
         <div class="social-icons">
             <!-- Reemplaza las URLs con tus enlaces reales -->
             <a href="https://www.tiktok.com/@sencayc"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TikTok"></a>
@@ -88,5 +335,23 @@
     <footer>
         <p>&copy; 2025 Sencay. Todos los derechos reservados.</p>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script>
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+                document.querySelectorAll('.portfolio-item').forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+            });
+        });
+    </script>
 </body>
-</html>
+</html> 
