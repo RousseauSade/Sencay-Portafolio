@@ -369,21 +369,22 @@ function filterPortfolio(category) {
 }
 
 // Event listeners para los botones de filtro
-document.querySelectorAll('.filter-btn').forEach(button => {
-  button.addEventListener('click', function() {
-    // Remover la clase 'active' de todos los botones
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-      btn.classList.remove('active');
+document.addEventListener('DOMContentLoaded', function() {
+  const backToTopBtn = document.querySelector('.back-to-top');
+  
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      backToTopBtn.classList.add('visible');
+    } else {
+      backToTopBtn.classList.remove('visible');
+    }
+  });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     });
-    
-    // Añadir la clase 'active' al botón clickeado
-    this.classList.add('active');
-    
-    // Obtener la categoría a filtrar
-    const filter = this.getAttribute('data-filter');
-    
-    // Aplicar el filtro
-    filterPortfolio(filter);
   });
 });
 
@@ -392,5 +393,7 @@ document.addEventListener('DOMContentLoaded', function() {
   filterPortfolio('all');
 });
     </script>
+    <!-- Botón Volver Arriba -->
+<button class="back-to-top" aria-label="Volver arriba">↑</button>
 </body>
 </html>
