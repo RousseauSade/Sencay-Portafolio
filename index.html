@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -389,6 +390,49 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+
+document.addEventListener('DOMContentLoaded', function() {
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
+  const zoomOverlay = document.getElementById('imageZoomOverlay');
+  const zoomedImage = document.getElementById('zoomedImage');
+  const closeZoom = document.querySelector('.close-zoom');
+
+  // Abrir zoom al hacer clic en una imagen
+  portfolioItems.forEach(item => {
+    const imgLink = item.querySelector('a');
+    const img = item.querySelector('img');
+    
+    imgLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      zoomedImage.src = img.src;
+      zoomOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Evita el scroll del cuerpo
+    });
+  });
+
+  // Cerrar zoom
+  closeZoom.addEventListener('click', function() {
+    zoomOverlay.classList.remove('active');
+    document.body.style.overflow = ''; // Restaura el scroll
+  });
+
+  // Cerrar al hacer clic fuera de la imagen
+  zoomOverlay.addEventListener('click', function(e) {
+    if (e.target === zoomOverlay) {
+      zoomOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Cerrar con tecla ESC
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && zoomOverlay.classList.contains('active')) {
+      zoomOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+});
+
 // Inicializar mostrando todos los elementos
 document.addEventListener('DOMContentLoaded', function() {
   filterPortfolio('all');
@@ -396,6 +440,14 @@ document.addEventListener('DOMContentLoaded', function() {
     </script>
     <!-- Botón Volver Arriba -->
 <button class="back-to-top" aria-label="Volver arriba">↑</button>
+
+<div class="image-zoom-overlay" id="imageZoomOverlay">
+  <span class="close-zoom">&times;</span>
+  <div class="image-zoom-container">
+    <img src="" alt="Imagen ampliada" id="zoomedImage">
+  </div>
+</div>
 </body>
 </html>
+
 
