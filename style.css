@@ -5,7 +5,6 @@
   box-sizing: border-box;
 }
 
-/* Importar fuentes de Google */
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Lobster&display=swap');
 
 body {
@@ -76,7 +75,6 @@ section {
   font-family: "Fredericka the Great", cursive;
 }
 
-/* Títulos h2 */
 h2 {
   text-align: center;
   color: #5b21b6;
@@ -99,7 +97,7 @@ h2::after {
   font-size: 1.8rem;
 }
 
-/* Portafolio - Versión mejorada */
+/* Portafolio */
 .filters {
   text-align: center;
   margin-bottom: 2.5rem;
@@ -130,35 +128,44 @@ h2::after {
 }
 
 .portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.875rem;
-  padding: 0 1.25rem;
-  align-items: start;
+  column-count: 4;
+  column-gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .portfolio-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 1.25rem;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  background-color: #fff;
-  transition: all 0.3s ease;
+  display: inline-block;
   width: 100%;
+  margin-bottom: 1.5rem;
+  break-inside: avoid;
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
-.portfolio-item.horizontal {
-  grid-column: span 2;
-}
-
+/* Imagen normal */
 .portfolio-item img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 1.25rem;
-  transition: transform 0.3s ease;
+  border-radius: 1rem;
 }
 
+/* Imagen vertical - se agranda */
+.portfolio-item.vertical img {
+  height: auto;
+  max-height: 600px;
+  object-fit: contain;
+}
+
+.portfolio-item.vertical {
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+
+/* Hover general */
 .portfolio-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
@@ -168,18 +175,18 @@ h2::after {
   transform: scale(1.03);
 }
 
+/* Overlay */
 .overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(91, 33, 182, 0.92);
+  background: rgba(91, 33, 182, 0.85);
   color: #fff;
-  padding: 1.25rem;
+  padding: 1rem;
   text-align: center;
   opacity: 0;
-  transition: opacity 0.4s ease;
-  font-weight: bold;
+  transition: opacity 0.3s ease;
 }
 
 .portfolio-item:hover .overlay {
@@ -202,8 +209,9 @@ h2::after {
   border-radius: 0.75rem;
   overflow-x: auto;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  border-collapse: collapse;
   display: block;
+  height: 40%;
+  width: 60%;
 }
 
 /* Contacto */
@@ -267,7 +275,6 @@ footer {
   margin-top: 3.75rem;
 }
 
-/* Texto intro */
 #texto-intro {
   font-size: 1.25rem;
   text-align: center;
@@ -275,68 +282,13 @@ footer {
   margin: 0 auto;
 }
 
-/* Ajustes para lightbox */
-.lightbox .lb-image {
-  max-width: 90vw;
-  max-height: 90vh;
-  width: auto !important;
-  height: auto !important;
-}
-
-.lightbox .lb-container {
-  padding: 0;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .portfolio-item.horizontal {
-    grid-column: span 1;
-  }
-  
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .lightbox .lb-image {
-    max-width: 95vw;
-    max-height: 95vh;
-  }
-  
-  header {
-    padding: 3rem 1rem;
-  }
-  
-  nav {
-    gap: 1rem;
-  }
-  
-  nav a {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-  }
-}
-
-#obras {
+#obras, #correo {
   text-align: center;
   font-size: 1.25rem;
   margin-top: 1.25rem;
 }
 
-#correo {
-  text-align: center;
-  font-size: 1.25rem;
-  margin-top: 1.25rem;
-}
-
-/* ------------------------------------ */
-/* ESTILOS PARA EL ZOOM DE IMÁGENES */
-/* ------------------------------------ */
+/* Estilos para el zoom de imágenes */
 .image-zoom-overlay {
   position: fixed;
   top: 0;
@@ -356,7 +308,7 @@ footer {
 }
 
 .zoomed-image-container {
-  background-color: white; /* fondo blanco */
+  background-color: white;
   padding: 1rem;
   border-radius: 1rem;
   max-width: 90vw;
@@ -424,8 +376,16 @@ footer {
   background-color: #2cb67d;
 }
 
-#Prices {
-  height: 40%;
-  width:  60%;
-  overflow-y: auto;
+/* Responsive */
+@media (max-width: 1024px) {
+  .portfolio-grid {
+    column-count: 2;
+  }
 }
+
+@media (max-width: 768px) {
+  .portfolio-grid {
+    column-count: 1;
+  }
+}
+
