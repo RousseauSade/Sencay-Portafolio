@@ -1,23 +1,19 @@
 
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portafolio de Sencay</title>
+    <title>Portafolio de Artista</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Lobster&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="./assets/favicon.ico">
 </head>
 <body>
     <header>
-        <h1 id="titulo">Portafolio de Sencay</h1>
+        <h1 id="titulo">Portafolio</h1>
         <img src="./assets/images/Sencay.png" alt="Logo Sencay" class="header-logo">
         <nav>
             <a href="#portfolio">Portafolio</a>
@@ -356,98 +352,120 @@
         <p>&copy; 2025 Sencay. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
     <script>
-function filterPortfolio(category) {
-  const items = document.querySelectorAll('.portfolio-item');
-  
-  items.forEach(item => {
-    if (category === 'all' || item.getAttribute('data-category') === category) {
-      item.style.display = 'block';
-    } else {
-      item.style.display = 'none';
-    }
-  });
-}
 
-// Event listeners para los botones de filtro
 document.addEventListener('DOMContentLoaded', function() {
-  const backToTopBtn = document.querySelector('.back-to-top');
-  
-  window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-      backToTopBtn.classList.add('visible');
-    } else {
-      backToTopBtn.classList.remove('visible');
-    }
-  });
+  // Crear overlay y elementos solo una vez para zoom
+  const zoomOverlay = document.createElement('div');
+  zoomOverlay.className = 'image-zoom-overlay';
+  zoomOverlay.style.display = 'none';
+  zoomOverlay.innerHTML = `
+    <div class="zoomed-image-container">
+      <span class="close-zoom" aria-label="Cerrar zoom">&times;</span>
+      <img src="" alt="Imagen ampliada" class="zoomed-image">
+    </div>
+  `;
+  document.body.appendChild(zoomOverlay);
 
-  backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+  const zoomedImg = zoomOverlay.querySelector('.zoomed-image');
+  const zoomedContainer = zoomOverlay.querySelector('.zoomed-image-container');
+  const closeBtn = zoomOverlay.querySelector('.close-zoom');
+
+  // Función para detectar transparencia en una imagen (con try/catch para evitar errores CORS)
+  function hasTransparency(img) {
+    return new Promise((resolve) => {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = img.naturalWidth;
+      canvas.height = img.naturalHeight;
+
+      try {
+        ctx.drawImage(img, 0, 0);
+        const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const pixels = imgData.data;
+        for (let i = 3; i < pixels.length; i += 4) {
+          if (pixels[i] < 255) {
+            resolve(true);
+            return;
+          }
+        }
+        resolve(false);
+      } catch (e) {
+        // Si falla (ej. por CORS), asumimos que no hay transparencia
+        resolve(false);
+      }
     });
-  });
-});
+  }
 
-
-document.addEventListener('DOMContentLoaded', function() {
+  // FILTRO DE PORTAFOLIO
+  const filterButtons = document.querySelectorAll('.filter-btn');
   const portfolioItems = document.querySelectorAll('.portfolio-item');
-  const zoomOverlay = document.getElementById('imageZoomOverlay');
-  const zoomedImage = document.getElementById('zoomedImage');
-  const closeZoom = document.querySelector('.close-zoom');
 
-  // Abrir zoom al hacer clic en una imagen
-  portfolioItems.forEach(item => {
-    const imgLink = item.querySelector('a');
-    const img = item.querySelector('img');
-    
-    imgLink.addEventListener('click', function(e) {
-      e.preventDefault();
-      zoomedImage.src = img.src;
-      zoomOverlay.classList.add('active');
-      document.body.style.overflow = 'hidden'; // Evita el scroll del cuerpo
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+
+      const category = this.getAttribute('data-filter');
+
+      portfolioItems.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category') === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
     });
   });
 
-  // Cerrar zoom
-  closeZoom.addEventListener('click', function() {
-    zoomOverlay.classList.remove('active');
-    document.body.style.overflow = ''; // Restaura el scroll
+  // ZOOM: Abrir zoom al click en cualquier imagen de portfolio
+  portfolioItems.forEach(item => {
+    const img = item.querySelector('img');
+    img.addEventListener('click', function(e) {
+      e.preventDefault();
+      zoomedImg.src = this.src;
+
+      hasTransparency(this).then(isTransparent => {
+        zoomedContainer.style.backgroundColor = isTransparent ? 'white' : 'transparent';
+      });
+
+      zoomOverlay.style.display = 'flex';
+      document.body.style.overflow = 'hidden'; // evitar scroll en body
+    });
   });
 
-  // Cerrar al hacer clic fuera de la imagen
-  zoomOverlay.addEventListener('click', function(e) {
-    if (e.target === zoomOverlay) {
-      zoomOverlay.classList.remove('active');
-      document.body.style.overflow = '';
-    }
+  // Función cerrar zoom
+  function closeZoom() {
+    zoomOverlay.style.display = 'none';
+    zoomedImg.src = '';
+    zoomedContainer.style.backgroundColor = 'transparent'; // reset fondo
+    document.body.style.overflow = '';
+  }
+
+  closeBtn.addEventListener('click', closeZoom);
+  zoomOverlay.addEventListener('click', e => {
+    if (e.target === zoomOverlay) closeZoom();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && zoomOverlay.style.display === 'flex') closeZoom();
   });
 
-  // Cerrar con tecla ESC
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && zoomOverlay.classList.contains('active')) {
-      zoomOverlay.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-  });
+  // BOTÓN VOLVER ARRIBA (si existe)
+  const backToTopBtn = document.querySelector('.back-to-top');
+  if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    });
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 });
 
-// Inicializar mostrando todos los elementos
-document.addEventListener('DOMContentLoaded', function() {
-  filterPortfolio('all');
-});
     </script>
-    <!-- Botón Volver Arriba -->
-<button class="back-to-top" aria-label="Volver arriba">↑</button>
-
-<div class="image-zoom-overlay" id="imageZoomOverlay">
-  <span class="close-zoom">&times;</span>
-  <div class="image-zoom-container">
-    <img src="" alt="Imagen ampliada" id="zoomedImage">
-  </div>
-</div>
 </body>
 </html>
-
-
